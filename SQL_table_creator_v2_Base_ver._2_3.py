@@ -6,7 +6,6 @@ from idlelib.tooltip import Hovertip           # всплывающие окна
 import openpyxl                   # need for work with Excel( especially .xlsx)
 from datetime import date         # need to create today-date.
 
-
 def createNewWindow():
     newWin = tk.Toplevel(win)
     newWin.geometry( f'350x400+200+210' )
@@ -23,10 +22,8 @@ def createNewWindow():
 - в данной программе тип данных DATA имеет вид YYYY-MM-DD; \n \
 - обратите внимание, на то что помимо пути к файлу мы указываем и наименование листа в Excel, где лижит еобходимая таблица', 
                     bg='#9ba29b', wraplength=200).pack()
+
     
-                    
-
-
 def open_file():                          # select path in file
     file_path = fd.askopenfilename()
     Entry_num.delete(0, tk.END)
@@ -102,8 +99,7 @@ def step_2_create_table_base():
             a = '    ' + str(sheet[list_excel[x_first+step] + str(y_first)].value)+ ' ' + 'VARCHAR('+ str(len_max + 10) + '),'
             final_table.append(a)
             tabel_type_dict[str(sheet[list_excel[x_first+step] + str(y_first)].value)] = 'VARCHAR'
-        step += 1
-        
+        step += 1     
     
     
     if Chek_step_date_create.get() == 1:
@@ -231,11 +227,6 @@ def clear_text2():
     print( 'Очищаем поле' )
 
 
-
-
-
-
-
 win = tk.Tk()
 win.geometry( f'470x750+150+200' )
 #photo = tk.PhotoImage(file='Icon.png')
@@ -292,13 +283,9 @@ step_2_text_2 = tk.Label(win, text='Код для создания таблиц�
 step_2_text_2.grid(row=7, column=1,  columnspan=6, stick='w')
 
 
-
 Create_button = tk.Button(win, text = 'Создать ', bd = 4, font=('PFDINDISPLAYPRO', 12), 
                           command = step_2_create_table_base, bg = '#ffffff', activebackground ='#d7db00' )
 Create_button.grid(row = 8, column=0, stick='we', padx = 25, pady = 5, columnspan=1) 
-
-
-
 
 Chek_step_date_create = tk.IntVar(win)
 step_2_chose_create_base = tk.Checkbutton(win, text = "Добавить поле 'Дата загрузки'", font='PFDINDISPLAYPRO 12',  
@@ -325,7 +312,6 @@ scroll.pack(side= 'right', fill= 'y')
 text.config(yscrollcommand=scroll.set)
 
 
-
 btn_del_text2 = Button(win, text = 'Clear', font=('PFDINDISPLAYPRO', 13), bd = 4, command=clear_text2, bg = '#ffffff', 
                        activebackground ='#d7db00').grid(row = 12, column=6, stick='we', padx = 25, pady = 5, columnspan=1) 
 btn_save_text2 = Button(win, text = 'Copy', font=('PFDINDISPLAYPRO', 13), bd = 4, command=copy_to_text2, bg = '#ffffff', 
@@ -340,11 +326,7 @@ scroll2.pack(side= 'right', fill= 'y')
 text2.config(yscrollcommand=scroll2.set)
 
 
-
-
-
 win.grid_rowconfigure(11, minsize='150')
-
 win.grid_rowconfigure(13, minsize='150')
 
 
