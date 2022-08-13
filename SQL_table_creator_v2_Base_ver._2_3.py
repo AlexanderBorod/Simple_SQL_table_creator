@@ -64,7 +64,7 @@ def step_2_create_table_base():
     step = 0
     while sheet[list_excel[x_first+step]+str(y_first+1)].value != None:  
         first_val_sheet = sheet[list_excel[x_first+step] + str(y_first+1)].value
-        sec_val_sheet = sheet[list_excel[x_first] + str(y_first+2)].value
+        sec_val_sheet = sheet[list_excel[x_first+step] + str(y_first+2)].value
         if (str(first_val_sheet)).isdigit() and (str(sec_val_sheet)).isdigit():          # test type to INT
             print( '    ' + str(sheet[list_excel[x_first+step] + str(y_first)].value), 'INT,', end ='\n' ) 
             a = '    ' + str(sheet[list_excel[x_first+step] + str(y_first)].value) + ' ' + 'INT,'
@@ -88,7 +88,7 @@ def step_2_create_table_base():
             final_table.append(a)
             tabel_type_dict[str(sheet[list_excel[x_first+step] + str(y_first)].value)] = 'DECIMAL'
     
-        elif (str(first_val_sheet)).isalnum() or (str(sec_val_sheet)). isalnum() or (str(first_val_sheet)).isalpha() or (str(sec_val_sheet)). isalpha():                         # test type to STR
+        else:                         # test type to STR? Are we have any chose?                 # test type to STR
             step_column = 0
             len_max = 0
             while (sheet[list_excel[x_first+step] + str(y_first+1+step_column)].value) != None:                       
