@@ -14,3 +14,8 @@ To work with the program you will need:
 3. Specify the name of the sheet where the table lies
 4. Make sure that the requirements specified in "!?" match.
 5. Create a table
+
+
+You can download the Excel file to test the program on your computer:
+
+https://cloud.mail.ru/public/wg8u/bSiAJAoAB
